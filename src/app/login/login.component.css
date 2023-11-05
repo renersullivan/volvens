@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.container-left{
+    font-size: 'paul grotesk soft';
+    border-radius: 15px;
+    border: solid 1px #18171c;
+    height: 920px;
+    width: 50%;
+    background-color: #18171c;
+    color: white;
+}
+.container-right{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    border-radius: 15px;
+    border: solid 1px red;
+    height: 920px;
+    width: 50%;
+}
+.container-right h1{
+    display: flex;
+    justify-content: space-between;
+}
