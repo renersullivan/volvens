@@ -3,13 +3,23 @@
     flex-direction: row;
 }
 .container-left{
-    font-size: 'paul grotesk soft';
+    display: flex;
+    flex-direction: row;
+    padding: 0px 0px 0px 15px;
     border-radius: 15px;
     border: solid 1px #18171c;
     height: 920px;
     width: 50%;
     background-color: #18171c;
     color: white;
+}
+.svg{
+    width: 80px;
+    height: 80px;
+    padding: 13px 9px 0px 0px;
+}
+.system{
+    margin-top: 50px;
 }
 .container-right{
     align-items: center;
@@ -60,3 +70,11 @@
     color: silver;
     cursor: pointer ;
 }
+@media (max-width: 600px) {
+    .container-left {
+      display: none;
+    }
+    .container-right{
+        width: 100%;
+    }
+  }
