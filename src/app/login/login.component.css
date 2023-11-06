@@ -17,11 +17,46 @@
     flex-direction: column;
     display: flex;
     border-radius: 15px;
-    border: solid 1px red;
+    border: solid 1px rgb(109, 106, 106);
     height: 920px;
     width: 50%;
 }
 .container-right h1{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+}
+.login{
+    display: flex;
+    position: absolute;
+    top: 39px;
+    right: 20px;
+    border-radius: 8px;
+    width: 63px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login:hover{
+    border: 1px solid #18171c;
+    border-radius: 8px;
+    transition: 0.3s;
+    background-color: #18171c;
+    color: white;
+    
+}
+.form-group input{
+    width: 230px;
+    height: 30px;
+    border-radius: 8px;
+    padding: 0px 0px 0px 10px;
+}
+.btn-submit{
+    border-radius: 8px;
+    width: 244px;
+    background-color: #18171c;
+    height: 30px;
+    color: silver;
+    cursor: pointer ;
 }
