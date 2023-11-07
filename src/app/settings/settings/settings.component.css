@@ -1,0 +1,24 @@
+.container-topo{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px 0px 28px;
+    
+}
+.container-topo h4{
+    color: #a6a4a4;
+}
+.border{
+    border: 1px solid  #e6e6e6;
+    width: 100%;
+  
+}
+.container-page{
+    display: flex;
+    flex-direction: row;
+    padding: 23px 0px 0px 28px;
+}
+.text-menu{
+    display: flex;
+    padding: 23px 0px 0px 0px;
+    color: #a6a4a4;
+}
