@@ -4,6 +4,9 @@
     padding: 0px 10px 0px 28px;
     
 }
+.container-topo h1{
+    margin-bottom: -13px;
+}
 .container-topo h4{
     color: #a6a4a4;
 }
@@ -15,7 +18,10 @@
 .container-page{
     display: flex;
     flex-direction: row;
-    padding: 23px 0px 0px 28px;
+    padding: 18px 0px 0px 28px;
+}
+.body-page{
+    width: 66%;
 }
 .menu{
     width: 300px;
@@ -31,4 +37,11 @@
     background-color: #f4f4f6;
     align-items: center;
     border-radius: 7%;
+}
+.text-page{
+    width: 66%;
+}
+.input-menu{
+    display: flex;
+    flex-direction: column;
 }
