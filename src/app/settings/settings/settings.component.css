@@ -17,8 +17,18 @@
     flex-direction: row;
     padding: 23px 0px 0px 28px;
 }
+.menu{
+    width: 300px;
+    padding: 12px;
+}
 .text-menu{
     display: flex;
-    padding: 23px 0px 0px 0px;
+    padding: 12px 0px 11px 9px;
     color: #a6a4a4;
+}
+.text-menu:hover{
+    padding: 12px 0px 11px 9px;
+    background-color: #f4f4f6;
+    align-items: center;
+    border-radius: 7%;
 }
