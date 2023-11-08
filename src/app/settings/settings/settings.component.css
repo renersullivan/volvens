@@ -6,6 +6,7 @@
 }
 .container-topo h1{
     margin-bottom: -13px;
+
 }
 .container-topo h4{
     color: #a6a4a4;
@@ -41,9 +42,18 @@
 .text-page{
     width: 48%;
 }
+.text-page h1{
+    color: #7e7c7c;
+}
+.text-page h4{
+    color: #7e7c7c;
+}
 .input-menu{
     display: flex;
     flex-direction: column;
+}
+.input-menu p{
+    color: #7e7c7c;
 }
 #meuInput {
     border-color: #a6a4a4;
@@ -55,6 +65,7 @@
 }
 .input-menu label{
     padding: 19px 0px 26px 0px;
+    color: #7e7c7c;
 }
 
 
