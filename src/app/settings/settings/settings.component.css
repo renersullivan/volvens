@@ -21,7 +21,7 @@
     padding: 18px 0px 0px 28px;
 }
 .body-page{
-    width: 66%;
+    width: 48%;
 }
 .menu{
     width: 300px;
@@ -36,12 +36,26 @@
     padding: 12px 0px 11px 9px;
     background-color: #f4f4f6;
     align-items: center;
-    border-radius: 7%;
+    border-radius: 7px;
 }
 .text-page{
-    width: 66%;
+    width: 48%;
 }
 .input-menu{
     display: flex;
     flex-direction: column;
 }
+#meuInput {
+    border-color: #a6a4a4;
+    border: 1px solid #a6a4a4;
+    height: 38px;
+    padding: 0px 10px;
+    border-radius: 7px;
+    outline: none;
+}
+.input-menu label{
+    padding: 19px 0px 26px 0px;
+}
+
+
+

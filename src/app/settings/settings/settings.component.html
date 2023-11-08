@@ -21,9 +21,33 @@
             </div>
             <div class="border"></div>
             <div class="input-menu">
-                <label for="meuInput">Username</label>
-                <input type="text" id="meuInput">
+                <label for="meuInput" >Username</label>
+                <input type="text" id="meuInput" placeholder="UserName">
+                <p class="text-username">This is your public display name.It can be your real name or pseudonym.You can only change this once every 30 days. </p>
             </div>
+            <div class="input-menu">
+                <label for="meuInput" >Email</label>
+                <input type="email" id="meuInput" placeholder="email@exemple.com">
+                <p class="text-username">You can manage verified email addresses in your email settings. </p>
+            </div>
+            <div class="input-menu">
+                <label for="bio">Bio</label>
+                <textarea id="bio" name="bio" rows="4" cols="50" placeholder="I own a computer."></textarea>
+                
+            </div>
+            <div class="input-menu">
+                <form id="urlForm">
+                   
+                    <input type="url" id="url1" name="url1" required><br><br>
+            
+                    <input type="url" id="url2" name="url2" required><br><br>
+            
+                    <button type="button" onclick="processUrls()">Add URL</button>
+                </form>
+  
+                
+            </div>
+      
       
             
         </div>
