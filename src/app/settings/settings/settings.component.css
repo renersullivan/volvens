@@ -90,6 +90,7 @@
     border-radius: 7px;
     margin-top: 15px;
     cursor: pointer;
+    color: #ffffff;
 }
 
 @media (max-width: 600px) {
