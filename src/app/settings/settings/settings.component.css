@@ -32,6 +32,7 @@
     display: flex;
     padding: 12px 0px 11px 9px;
     color: #a6a4a4;
+    cursor: pointer;
 }
 .text-menu:hover{
     padding: 12px 0px 11px 9px;
@@ -64,9 +65,38 @@
     outline: none;
 }
 .input-menu label{
-    padding: 19px 0px 26px 0px;
-    color: #7e7c7c;
+    padding: 18px 0px 12px 0px;
+    color:#18181a;
+}
+.input-menu input{
+    height: 30px;
+    outline: none;
+    margin-bottom: 12px;
+}
+.button{
+    height: 38px;
+    border-radius: 6px;
+    width: 80px;
+    background: #ffffff;
+}
+.btn-update{
+    background-color: #12121a;
+    border: 1px solid #18181a;
+    width: 108px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 7px;
+    margin-top: 15px;
+    cursor: pointer;
 }
 
-
-
+@media (max-width: 600px) {
+    .menu {
+      display: none;
+    }
+    .body-page{
+        width: 100%;
+    }
+  }
