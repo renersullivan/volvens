@@ -73,6 +73,9 @@
     outline: none;
     margin-bottom: 12px;
 }
+.input-menu textarea{
+    padding: 12px 0px 0px 10px;
+}
 .button{
     height: 38px;
     border-radius: 6px;
@@ -91,6 +94,10 @@
     margin-top: 15px;
     cursor: pointer;
     color: #ffffff;
+}
+.btn-update:hover{
+    background-color: #ffffff;
+    color: #12121a;
 }
 
 @media (max-width: 600px) {
