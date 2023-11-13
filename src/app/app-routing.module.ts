@@ -6,10 +6,10 @@ import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  // {path: 'setings', component:SettingsComponent },
-  // {path: 'login', component: LoginComponent},
-  // {path:'',component:LoginComponent},
-  {path:'',component:TableComponent},
+  {path: 'setings', component:SettingsComponent },
+  {path: 'login', component: LoginComponent},
+  {path:'',component:LoginComponent},
+  {path:'table',component:TableComponent},
 ];
 
 @NgModule({
