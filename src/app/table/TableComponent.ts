@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TableComponent implements OnInit {
 
-  displayedColumns: [] | undefined;
+results: any;
 
   constructor(private http: HttpClient) { }
 
@@ -16,7 +16,7 @@ export class TableComponent implements OnInit {
     this.http.get<any>('http://138.68.232.90:3333/clientes').subscribe(
       data => {
         console.log(data); 
-        this.displayedColumns = data.results;
+        this.results = data.results;
       },
 
     

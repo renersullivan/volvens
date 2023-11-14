@@ -9,10 +9,10 @@ export class SettingsComponent implements OnInit {
   displayedColumns: string[];
 
   constructor() {
-    this.displayedColumns = []; // Add the initialization here
+    this.displayedColumns = []; 
   }
 
   ngOnInit() {
-    // Your component initialization code here
+
   }
 }
