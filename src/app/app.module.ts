@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatTableModule } from '@angular/material/table';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 import { SettingsComponent } from './settings/settings/settings.component';
-import { TableComponent } from './table/TableComponent';
+import { TableComponent } from './pages/table/tableComponent';
 import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
