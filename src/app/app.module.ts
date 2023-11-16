@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SettingsComponent } from './settings/settings/settings.component';
 import { TableComponent } from './pages/table/tableComponent';
 import { HttpClientModule } from '@angular/common/http'; 
+import { HeadComponent } from './components/head/head.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     SettingsComponent,
     TableComponent,
+    HeadComponent,
     
   
   ],
