@@ -40,4 +40,8 @@ export interface Cliente {
     nacionalidade: string
     id_usuario: number
     data_cadastro: number
+    cidade:string
+    uf:string
+    endereco: string
+    bairro: string
   }
