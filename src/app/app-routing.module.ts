@@ -4,6 +4,7 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path:'clientes',component:ClientesComponent},
   {path:'home',component:HomeComponent},
-  {path:'',component:LoginComponent},
+  {path:'',component:NotFoundComponent},
 
 ];
 
