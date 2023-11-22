@@ -1,0 +1,58 @@
+<div class="container-geral">
+    <div class="container-topo">
+        <h1>Settings</h1>
+        <h4>manage your account settings and set e-mail preferences.</h4>
+        <div class="border"></div>
+    </div>
+    <div class="container-page">
+        <div class="menu">
+            <div class="text-menu">Profile</div>
+            <div class="text-menu">Account</div>
+            <div class="text-menu">Appearance</div>
+            <div class="text-menu">Notifications</div>
+            <div class="text-menu">Display</div>
+
+        </div>
+        <div class="body-page">
+            <div class="text-page">
+                <h1>Profile</h1>
+                <h4>This is how others will see you on the site.</h4>
+
+            </div>
+            <div class="border"></div>
+            <div class="input-menu">
+                <label for="meuInput" >Username</label>
+                <input type="text" id="meuInput" placeholder="UserName">
+                <p class="text-username">This is your public display name.It can be your real name or pseudonym.You can only change this once every 30 days. </p>
+            </div>
+            <div class="input-menu">
+                <label for="meuInput" >Email</label>
+                <input type="email" id="meuInput" placeholder="email@exemple.com">
+                <p class="text-username">You can manage verified email addresses in your email settings. </p>
+            </div>
+            <div class="input-menu">
+                <label for="bio">Bio</label>
+                <textarea id="bio" name="bio" rows="4" cols="50" placeholder="I own a computer."></textarea>
+                <p class="text-username">You can manage verified email addresses in your email settings. </p>
+                
+            </div>
+            <div class="input-menu">
+                <label for="bio">URLs</label>
+                <p class="text-username">Add links to your website, blog or social media profiles.. </p>
+                   
+                <input type="url" id="meuInput" name="url1" required placeholder="https://shadcn.com">
+            
+                <input type="url" id="meuInput" name="url2" required placeholder="http://twitter.com/shadcn">
+            
+                <button class="button" onclick="processUrls()">Add URL</button>       
+               
+            </div>
+            <div class="btn-update">Update profile</div>
+      
+      
+            
+        </div>
+
+    </div>
+  
+</div>

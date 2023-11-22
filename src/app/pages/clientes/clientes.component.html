@@ -1,0 +1,61 @@
+<app-head title="Clientes"></app-head>
+
+
+<main>
+  
+  <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
+    <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
+      <thead class="bg-gray-50">
+        <tr>
+
+   
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Nome /Telefone </th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Cargo / Salario</th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Endereço Bairro</th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Cidade / UF</th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ações</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+
+            <tr class="hover:bg-gray-50" *ngFor="let result of results" >
+              <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
+               
+                <div class="text-sm">
+                  <div class="font-medium text-gray-700">{{result.nome}}</div>
+                  <div class="text-gray-400">{{result.telefone}} </div>
+                </div>
+              </th>
+              <td class="px-6 py-4">
+                <span
+                    class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600"
+                  >
+                {{result.cargo}} - {{result.salario}} 
+                </span>
+              </td>
+              <td class="px-6 py-4"> {{result.endereco}} - {{result.bairro}}  </td>
+              <td class="px-6 py-4">
+                <div class="flex gap-2">
+                  <span
+                    class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600"
+                  >
+                  {{result.cidade}} - {{result.uf}}
+                  </span>
+                   
+                </div>
+              </td>
+              <td class="px-6 py-4">
+                <div class="flex justify-end gap-4">
+               
+                  <a x-data="{ tooltip: 'Edite' }" href="#">
+                    <svg   class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" id="Editable-line" version="1.1" xml:space="preserve"><path d="  M16,7C9.934,7,4.798,10.776,3,16c1.798,5.224,6.934,9,13,9s11.202-3.776,13-9C27.202,10.776,22.066,7,16,7z" fill="none" id="XMLID_10_" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="16" cy="16" fill="none" id="XMLID_12_" r="5" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+                  </a>
+                </div>
+              </td>
+            </tr>
+ 
+      </tbody>
+    </table>
+  </div>
+ 
+</main>
