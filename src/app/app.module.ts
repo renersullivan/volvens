@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeadComponent } from './components/head/head.component';
 import { FormsModule } from '@angular/forms';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { VendasComponent } from './pages/vendas/vendas.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ClientesComponent } from './pages/clientes/clientes.component';
     SettingsComponent,
     HomeComponent,
     HeadComponent,
+    VendasComponent,
     
   
   ],
