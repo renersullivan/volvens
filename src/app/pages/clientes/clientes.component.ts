@@ -43,7 +43,7 @@ export class ClientesComponent implements OnInit {
     this.itemPerPage = itemPerPage || this.itemPerPage 
 
     if(this.city){
-      this.http.get<Clientes>(`http://localhost:3333/clientesByCity?page=${this.page}&limit=${this.itemPerPage}&orderBy=cidade&filter=${this.city}`).subscribe(
+      this.http.get<Clientes>(`http://127.0.0.1:3333/clientesByCity?page=${this.page}&limit=${this.itemPerPage}&orderBy=cidade&filter=${this.city}`).subscribe(
         result => {
           console.log(result);
           this.results = result.data;
@@ -52,14 +52,18 @@ export class ClientesComponent implements OnInit {
       )
       return
     }
-    
-    this.http.get<Clientes>(`http://localhost:3333/clientes?page=${this.page}&limit=${this.itemPerPage}&orderBy=cidade`).subscribe(
+    this.http.get<Clientes>(`http://127.0.0.1:3333/clientes?page=${this.page}&limit=${this.itemPerPage}&orderBy=cidade`).subscribe(
       result => {
         console.log(result);
         this.results = result.data;
         this.metaData = result.meta
       },
     )
+  }
+
+  public resetPageAndSearch(){
+    this.page = 1
+    this.requestPage()
   }
 
   
