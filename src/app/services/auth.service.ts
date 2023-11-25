@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TokenStorageService } from './token.service';
 
-const AUTH_API = 'http://localhost:8080/api/auth/';
+const AUTH_API = 'http://138.68.232.90:8080/api/auth/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,7 +16,7 @@ export class AuthService {
 
   public login(email: string, password: string) {
 
-    return this.http.post<any>('http://127.0.0.1:3333/login', {email, password})
+    return this.http.post<any>('http://138.68.232.90:3333/login', {email, password})
   }
 
   // refreshToken(token: string) {
