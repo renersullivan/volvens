@@ -29,22 +29,20 @@ export class VendasComponent implements OnInit{
 
   public requestPage(page?: number, itemPerPage?: string | null) {
 
-    this.page = page ||  this.page
-    this.itemPerPage = itemPerPage || this.itemPerPage 
+    this.page = page ??  this.page
+    this.itemPerPage = itemPerPage ?? this.itemPerPage 
 
     if(this.city){
-      this.http.get<any>(`http://138.68.232.90:3333/vendas`).subscribe(
+      this.http.get<any>(`http://localhost:3333/vendas?page=${this.page}&limit=${this.itemPerPage}&orderBy=cidade&filter=${this.city}`).subscribe(
         result => {
-          console.log(result);
           this.results = result.data;
           this.metaData = result.meta
         },
       )
       return
     }
-    this.http.get<any>(`http://138.68.232.90:3333/vendas`).subscribe(
+    this.http.get<any>(`http://localhost:3333/vendas?page=${this.page}&limit=${this.itemPerPage}&orderBy=cidade`).subscribe(
       result => {
-        console.log(result);
         this.results = result.data;
         this.metaData = result.meta
       },

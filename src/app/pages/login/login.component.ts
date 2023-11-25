@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { TokenStorageService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-login',
@@ -10,20 +12,37 @@ import { Router } from '@angular/router';
 export class LoginComponent{
     
   access:unknown;
-
-  constructor(private http: HttpClient, private route:Router) { }
+  email!:string;
+  password!:string;
+  showTip:boolean = false;
   
 
-  public login() {
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router:Router) { }
 
-    this.http.post<any>('http://127.0.0.1:3333/login', {access: this.access}).subscribe(
-      result => {
-        console.log(result); 
-        this.route.navigateByUrl('/home')
-      },
-      
-    )
+  closeTip(){
+    this.showTip = false
+  }
+
+  shouldShowTip(){
+    this.showTip = true
+
+    setTimeout(()=> this.closeTip(), 5000)
+  }
+
+  public login() {
+    this.authService.login(this.email, this.password).subscribe( (data) => {
+      this.tokenStorage.saveToken(data.token);
+      this.tokenStorage.saveRefreshToken(data.token);
+      this.tokenStorage.saveUser(data.user.id);
+
+      this.router.navigateByUrl('/home')
+
+    },
+    (err) => this.shouldShowTip(),
+    
+  );
 }
+
 }
 
 

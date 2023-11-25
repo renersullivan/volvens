@@ -1,7 +1,7 @@
 <app-head title="Clientes"></app-head>
 
 
-<main>
+<main  *ngIf="metaData">
   <section class="max-w-7xl" style="margin: auto;" > 
 
     <div class="border border-gray-300 p-6 grid grid-cols-1 gap-6 bg-white shadow-lg rounded-lg"> 
@@ -34,7 +34,7 @@
 
     <div class="flex gap-2 m-3">
       <div class="center relative inline-block select-none whitespace-nowrap rounded-lg   py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-black  border border-gray-200 ">
-        <div class="mt-px"> Resultados encontrados - {{metaData.total}}</div>
+        <div *ngIf="metaData.total" class="mt-px"> Resultados encontrados - {{metaData.total}}</div>
       </div>
       <div class="center relative inline-block select-none whitespace-nowrap rounded-lg py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-black  border border-gray-200 ">
         <div class="mt-px">Página atual - {{metaData.current_page}}</div>
@@ -49,32 +49,32 @@
         <tr>
 
    
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Nome /Telefone </th>
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Cargo / Salario</th>
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Endereço Bairro</th>
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Cidade / UF</th>
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ações</th>
+          <th scope="col" class="px-3 py-4 font-medium text-gray-900">Nome /Telefone </th>
+          <th scope="col" class="px-3 py-4 font-medium text-gray-900">Cargo / Salario</th>
+          <th scope="col" class="px-3 py-4 font-medium text-gray-900">Endereço Bairro</th>
+          <th scope="col" class="px-3 py-4 font-medium text-gray-900">Cidade / UF</th>
+          <th scope="col" class="px-3 py-4 font-medium text-gray-900">Ações</th>
         </tr>
       </thead>
       <tbody class="divide-y divide-gray-100 border-t border-gray-100">
 
             <tr class="hover:bg-gray-50" *ngFor="let result of results" >
-              <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
+              <th class="flex gap-3 px-3 py-4 font-normal text-gray-900">
                
                 <div class="text-sm">
                   <div class="font-medium text-gray-700">{{result.nome}}</div>
                   <div class="text-gray-400">{{result.telefone}} </div>
                 </div>
               </th>
-              <td class="px-6 py-4">
+              <td class="px-3 py-4">
                 <span
                     class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600"
                   >
                 {{result.cargo}} - {{result.salario}} 
                 </span>
               </td>
-              <td class="px-6 py-4"> {{result.endereco}} - {{result.bairro}}  </td>
-              <td class="px-6 py-4">
+              <td class="px-3 py-4"> {{result.endereco}} - {{result.bairro}}  </td>
+              <td class="px-3 py-4">
                 <div class="flex gap-2">
                   <span
                     class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600"
@@ -84,7 +84,7 @@
                    
                 </div>
               </td>
-              <td class="px-6 py-4">
+              <td class="px-3 py-4">
                 <div class="flex justify-end gap-4">
                
                   <a x-data="{ tooltip: 'Edite' }">
@@ -102,7 +102,7 @@
     
   </div>
   <div class="flex items-center justify-between mt-6">
-    <a (click)="requestPage(metaData.current_page - 1)"  *ngIf="metaData.current_page > 1" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100   ">
+    <a (click)="requestPage(metaData.current_page - 1)"   class="flex items-center px-5 py-2 text-sm text-gray-700  m-5  capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100   ">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
         </svg>
@@ -112,13 +112,13 @@
         </span>
     </a>
 
-    <div class="items-center hidden md:flex gap-x-3">
+    <div class="items-center md:flex gap-x-3">
       <a  (click)="requestPage(metaData.current_page - 1)"  class="px-2 py-1 text-sm text-gray-500 rounded-md  hover:bg-gray-100" *ngIf="metaData.current_page > 1">{{metaData.current_page - 1}}</a> 
         <a class="px-2 py-1 text-sm text-blue-500 rounded-md  bg-blue-100/60">{{metaData.current_page}}</a>
         <a   (click)="requestPage(metaData.current_page + 1)"  class="px-2 py-1 text-sm text-gray-500 rounded-md  hover:bg-gray-100"  *ngIf="metaData.current_page < metaData.last_page" >{{metaData.current_page + 1}}</a> 
     </div>
 
-    <a (click)="requestPage(metaData.current_page + 1)" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize  duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100  " >
+    <a (click)="requestPage(metaData.current_page + 1)" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize m-5  duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100  " >
         <span >
             Próximo
         </span>

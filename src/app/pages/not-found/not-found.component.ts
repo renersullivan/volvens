@@ -17,9 +17,15 @@ import { Route, Router } from '@angular/router';
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.css']
 })
-export class NotFoundComponent {
+export class NotFoundComponent implements OnInit {
  
-  constructor(private location: Location) {}
+  constructor(private location: Location, private router:Router) {}
+
+  ngOnInit(): void {
+  setTimeout(()=>{
+    this.router.navigateByUrl('/login')
+  }, 4000)  
+  }
 
   public backButton(){
     this.location.back();
