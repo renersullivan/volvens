@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
+import { DataService } from 'src/app/services/data-service.service';
 
 @Component({
   selector: 'app-vendas',
@@ -17,7 +18,7 @@ export class VendasComponent implements OnInit{
   itemPerPage: string = '10';
   filter?: string = 'cidade'
 
-  constructor(private http: HttpClient, public dialog: MatDialog) { }
+  constructor(private http: HttpClient, public dialog: MatDialog,private dataService: DataService) { }
 
   city: string = '';
 
@@ -28,7 +29,6 @@ export class VendasComponent implements OnInit{
   public onChange(param: any) {
    this.itemPerPage = param.value
 }
-
   public requestPage(page?: number, itemPerPage?: string | null) {
 
     this.page = page ??  this.page
@@ -58,7 +58,13 @@ export class VendasComponent implements OnInit{
 
 
   openModal(): void {
-    const dialogRef = this.dialog.open(ModalComponent);
+    this.dataService.getDados().subscribe((data) => {
+      const dialogRef = this.dialog.open(ModalComponent, {
+        width: '600px',
+        data: { dados: data } // Passe os dados obtidos do backend para o modal
+      });
+
+  
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('Modal fechado');
@@ -66,5 +72,4 @@ export class VendasComponent implements OnInit{
   }
   
 
-}
-
+)}}
