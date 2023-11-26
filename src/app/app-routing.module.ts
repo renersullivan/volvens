@@ -6,10 +6,12 @@ import { LoginComponent } from './pages/login/login.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { VendasComponent } from './pages/vendas/vendas.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 const routes: Routes = [
   {path: 'settings', component:SettingsComponent },
+  {path: 'modal', component:ModalComponent },
   {path:'clientes',component:ClientesComponent},
   {path:'home',component:HomeComponent},
   {path:'vendas',component:VendasComponent},

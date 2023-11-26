@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-vendas',
@@ -15,7 +17,7 @@ export class VendasComponent implements OnInit{
   itemPerPage: string = '10';
   filter?: string = 'cidade'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public dialog: MatDialog) { }
 
   city: string = '';
 
@@ -54,6 +56,14 @@ export class VendasComponent implements OnInit{
     this.requestPage()
   }
 
+
+  openModal(): void {
+    const dialogRef = this.dialog.open(ModalComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Modal fechado');
+    });
+  }
   
 
 }

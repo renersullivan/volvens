@@ -14,6 +14,10 @@ import { VendasComponent } from './pages/vendas/vendas.component';
 import { AuthInterceptor } from './core/interceptor/interceptor';
 import { ModalComponent } from './components/modal/modal.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +36,10 @@ import { ModalComponent } from './components/modal/modal.component';
     AppRoutingModule,
     MatTableModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatDialogModule,
+    BrowserModule
   ],
   providers: [
     {
