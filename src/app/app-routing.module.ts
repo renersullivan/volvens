@@ -10,12 +10,12 @@ import { VendasComponent } from './pages/vendas/vendas.component';
 
 const routes: Routes = [
   {path: 'settings', component:SettingsComponent },
-  {path:'clientes',component:ClientesComponent},
-  {path:'home',component:HomeComponent},
-  {path:'vendas',component:VendasComponent},
+  {path: 'clientes',component:ClientesComponent},
+  {path: 'home',component:HomeComponent},
+  {path: 'vendas',component:VendasComponent},
   {path: 'login', component: LoginComponent},
-  {path:'',component:HomeComponent},
-  {path:'*',component:NotFoundComponent},
+  {path: '',component:HomeComponent},
+  {path: '*',component:NotFoundComponent},
 
 ];
 
