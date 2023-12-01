@@ -13,5 +13,7 @@ export class ModalComponent {
   fecharModal(): void {
     this.dialogRef.close();
   }
-
+  imprimir(): void {
+    window.print();
+  }
 }
