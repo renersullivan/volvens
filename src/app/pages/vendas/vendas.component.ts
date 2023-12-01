@@ -55,21 +55,13 @@ export class VendasComponent implements OnInit{
     this.page = 1
     this.requestPage()
   }
-
-
-  openModal(): void {
-    this.dataService.getDados().subscribe((data) => {
-      const dialogRef = this.dialog.open(ModalComponent, {
-        width: '600px',
-        data: { dados: data } // Passe os dados obtidos do backend para o modal
-      });
-
   
+  toggleModal(): void {
+    const dialogRef = this.dialog.open(ModalComponent);
 
+    // Se quiser realizar ações quando o modal for fechado:
     dialogRef.afterClosed().subscribe(result => {
       console.log('Modal fechado');
+      // Aqui você pode executar ações após o modal ser fechado
     });
-  }
-  
-
-)}}
+}}

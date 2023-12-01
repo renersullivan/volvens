@@ -39,7 +39,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormsModule,
     MatButtonModule,
     MatDialogModule,
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {
