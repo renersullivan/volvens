@@ -9,6 +9,7 @@ import { VendasComponent } from './pages/vendas/vendas.component';
 import { ModalComponent } from './components/modal/modal.component';
 
 
+
 const routes: Routes = [
   {path: 'settings', component:SettingsComponent },
   {path: 'modal', component:ModalComponent },
