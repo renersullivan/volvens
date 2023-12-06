@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
+import { environment } from 'environment';
+import { ModalComponent } from 'src/app/elements/modal/modal.component';
 import { DataService } from 'src/app/services/data-service.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class VendasComponent implements OnInit{
   page: number = 1;
   itemPerPage: string = '10';
   filter?: string = 'cidade'
+  private API_URL= environment.API_URL;
 
   constructor(private http: HttpClient, public dialog: MatDialog,private dataService: DataService) { }
 
@@ -35,7 +37,7 @@ export class VendasComponent implements OnInit{
     this.itemPerPage = itemPerPage ?? this.itemPerPage 
 
     if(this.city){
-      this.http.get<any>(`http://138.68.232.90:3333/vendas?page=${this.page}&limit=${this.itemPerPage}&orderBy=cidade&filter=${this.city}`).subscribe(
+      this.http.get<any>(`${this.API_URL}/vendas?page=${this.page}&limit=${this.itemPerPage}&orderBy=cidade&filter=${this.city}`).subscribe(
         result => {
           this.results = result.data;
           this.metaData = result.meta
@@ -43,7 +45,7 @@ export class VendasComponent implements OnInit{
       )
       return
     }
-    this.http.get<any>(`http://138.68.232.90:3333/vendas?page=${this.page}&limit=${this.itemPerPage}&orderBy=cidade`).subscribe(
+    this.http.get<any>(`${this.API_URL}/vendas?page=${this.page}&limit=${this.itemPerPage}&orderBy=cidade`).subscribe(
       result => {
         this.results = result.data;
         this.metaData = result.meta
@@ -56,8 +58,10 @@ export class VendasComponent implements OnInit{
     this.requestPage()
   }
   
-  toggleModal(): void {
-    const dialogRef = this.dialog.open(ModalComponent);
+  toggleModal(idVenda: string): void {
+    const dialogRef = this.dialog.open(ModalComponent,{
+      data: idVenda
+    });
 
     // Se quiser realizar ações quando o modal for fechado:
     dialogRef.afterClosed().subscribe(result => {

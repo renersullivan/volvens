@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DataService } from 'src/app/services/data-service.service';
 
 @Component({
@@ -8,22 +8,21 @@ import { DataService } from 'src/app/services/data-service.service';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit {
-  resultados: any[] = [];
+  resultados: any;
 
-  constructor(private consultaService: DataService,public dialogRef: MatDialogRef<ModalComponent>) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private consultaService: DataService,public dialogRef: MatDialogRef<ModalComponent>) {}
 
   ngOnInit(): void {
-    this.consultaService.realizarConsulta().subscribe(() => {
-      this.resultados = this.consultaService.resultadosConsulta;
+    this.consultaService.realizarConsulta(this.data).subscribe((result) => {
+      this.resultados = result
     });
   }
-
-
 
 
   fecharModal(): void {
     this.dialogRef.close();
   }
+  
   imprimir(): void {
     window.print();
   }
