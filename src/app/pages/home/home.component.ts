@@ -24,7 +24,7 @@ metaData!: MetaData;
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<Clientes>('http://138.68.232.90:3333/clientes').subscribe(
+    this.http.get<Clientes>('${this.API_URL}/clientes').subscribe(
       result => {
         console.log(result); 
         this.results = result.data;

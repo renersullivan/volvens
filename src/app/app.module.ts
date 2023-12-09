@@ -7,16 +7,17 @@ import { LoginComponent } from './pages/login/login.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'; 
-import { HeadComponent } from './components/head/head.component';
+import { HeadComponent } from './elements/head/head.component';
 import { FormsModule } from '@angular/forms';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { VendasComponent } from './pages/vendas/vendas.component';
 import { AuthInterceptor } from './core/interceptor/interceptor';
-import { ModalComponent } from './components/modal/modal.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ButtonComponent } from './elements/button/button.component';
+import { ModalComponent } from './elements/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     HomeComponent,
     HeadComponent,
     VendasComponent,
+    ButtonComponent,
     ModalComponent
-    
   
   ],
   imports: [
@@ -48,6 +49,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     useClass: AuthInterceptor,
     multi: true
   },
+  
 ],
   bootstrap: [AppComponent]
 })
