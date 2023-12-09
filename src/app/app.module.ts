@@ -18,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ButtonComponent } from './elements/button/button.component';
 import { ModalComponent } from './elements/modal/modal.component';
+import { ModalClienteComponent } from './elements/modal-cliente/modal-cliente.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ModalComponent } from './elements/modal/modal.component';
     HeadComponent,
     VendasComponent,
     ButtonComponent,
-    ModalComponent
+    ModalComponent,
+    ModalClienteComponent
   
   ],
   imports: [

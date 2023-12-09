@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Cliente } from 'src/app/interfaces/clientes.interface';
 import { MetaData } from 'src/app/interfaces/page.interface';
 import { environment } from 'environment';
+import { ModalClienteComponent } from 'src/app/elements/modal-cliente/modal-cliente.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
@@ -27,7 +29,7 @@ export class ClientesComponent implements OnInit {
   itemPerPage: string = '10';
   filter?: string = 'cidade'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public dialog: MatDialog) { }
 
   city: string = '';
 
@@ -68,6 +70,15 @@ export class ClientesComponent implements OnInit {
     this.requestPage()
   }
 
-  
+  toggleModal(idCliente: string): void {
+    const dialogRef = this.dialog.open(ModalClienteComponent,{
+      data: idCliente
+    });
 
-}
+    // Se quiser realizar ações quando o modal for fechado:
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Modal fechado');
+      // Aqui você pode executar ações após o modal ser fechado
+    });
+
+}}
