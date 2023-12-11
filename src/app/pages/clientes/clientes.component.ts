@@ -29,6 +29,7 @@ export class ClientesComponent implements OnInit {
   itemPerPage: string = '10';
   filter?: string = 'cidade'
 
+
   constructor(private http: HttpClient, public dialog: MatDialog) { }
 
   city: string = '';
