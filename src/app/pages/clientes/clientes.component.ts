@@ -71,15 +71,10 @@ export class ClientesComponent implements OnInit {
     this.requestPage()
   }
 
-  toggleModal(idCliente: string): void {
-    const dialogRef = this.dialog.open(ModalClienteComponent,{
+  openModalDetail(idCliente: string): void {
+     this.dialog.open(ModalClienteComponent,{
       data: idCliente
     });
 
-    // Se quiser realizar ações quando o modal for fechado:
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Modal fechado');
-      // Aqui você pode executar ações após o modal ser fechado
-    });
 
 }}
