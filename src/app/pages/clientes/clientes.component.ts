@@ -71,7 +71,7 @@ export class ClientesComponent implements OnInit {
     this.requestPage()
   }
 
-  openModalDetail(idCliente: string): void {
+  openModalDetail(idCliente: number): void {
      this.dialog.open(ModalClienteComponent,{
       data: idCliente
     });

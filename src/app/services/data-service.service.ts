@@ -25,7 +25,7 @@ export class DataService
       );
   }
 
-  Consultacliente(idCliente: string): Observable<any> {
+  consultaCliente(idCliente: string): Observable<any> {
     return this.http.get<any>(`${this.API_URL}/cliente/${idCliente}`) // Substitua 'URL_DA_API' pela URL real da sua API
       .pipe(
         map((resposta: any) => {

@@ -27,41 +27,51 @@
                 </div> -->
                 <div class="mt-6 border-t border-gray-100">
                   <dl class="divide-y divide-gray-100">
+
                     <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                      <dt class="text-sm font-medium leading-6 text-gray-900">Data Venda</dt>
-                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.dataVenda | date}}</dd>
+                      <dt class="text-sm font-medium leading-6 text-gray-900">Nome Cliente :</dt>
+                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.nome}}</dd>
                     </div>
-                    <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                      <dt class="text-sm font-medium leading-6 text-gray-900">Nome Cliente</dt>
-                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.clienteNome}}</dd>
-                    </div>
-                    <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0" *ngIf="resultados.clienteTelefone">
-                      <dt class="text-sm font-medium leading-6 text-gray-900">Telefone Cliente</dt>
-                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.clienteTelefone}}</dd>
-                    </div>
-                    <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0" *ngIf="resultados.clienteCelular">
-                      <dt class="text-sm font-medium leading-6 text-gray-900">Celular Cliente</dt>
-                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.clienteCelular}}</dd>
+                    <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0" >
+                      <dt class="text-sm font-medium leading-6 text-gray-900">Telefone Cliente :</dt>
+                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.telefone}}</dd>
                     </div>
                     <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                      <dt class="text-sm font-medium leading-6 text-gray-900">Cidade Cliente</dt>
-                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.cidadeCliente}} - {{resultados.ufVenda}}</dd>
+                      <dt class="text-sm font-medium leading-6 text-gray-900">Cpf :</dt>
+                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.cpf}} - {{resultados.ufVenda}}</dd>
                     </div>
                     <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                      <dt class="text-sm font-medium leading-6 text-gray-900">Tipo pagamento</dt>
-                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.tipoPagamento}}</dd>
+                      <dt class="text-sm font-medium leading-6 text-gray-900">Cargo :</dt>
+                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.cargo}} - {{resultados.ufVenda}}</dd>
                     </div>
                     <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                      <dt class="text-sm font-medium leading-6 text-gray-900">Produto</dt>
-                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.produtoNome}}</dd>
+                      <dt class="text-sm font-medium leading-6 text-gray-900">Salario :</dt>
+                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.salario}} - {{resultados.ufVenda}}</dd>
                     </div>
-                    <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0" *ngIf="resultados.valorParcelas">
-                      <dt class="text-sm font-medium leading-6 text-gray-900"> Valor Parcelas</dt>
-                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"> {{resultados.valorParcelas.slice(0,2) | currency:'BRL'}} x {{resultados.quantidadeParcelas}}</dd>
+                    <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0" >
+                      <dt class="text-sm font-medium leading-6 text-gray-900">Data de Nascimento : </dt>
+                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.data_nascimento | date}}</dd>
                     </div>
                     <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                      <dt class="text-sm font-medium leading-6 text-gray-900"> Vendedor</dt>
-                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"> {{resultados.vendedorNome}}</dd>
+                      <dt class="text-sm font-medium leading-6 text-gray-900">Local de Nascimento :</dt>
+                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.local_nascimento}} - {{resultados.ufVenda}}</dd>
+                    </div>
+
+                    <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                      <dt class="text-sm font-medium leading-6 text-gray-900">Endereço:</dt>
+                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.endereco}}</dd>
+                    </div>
+                    <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                      <dt class="text-sm font-medium leading-6 text-gray-900">Bairro :</dt>
+                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{resultados.bairro}}</dd>
+                    </div>
+                    <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                      <dt class="text-sm font-medium leading-6 text-gray-900"> Cidade :</dt>
+                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"> {{resultados.cidade}}</dd>
+                    </div>
+                    <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                      <dt class="text-sm font-medium leading-6 text-gray-900"> UF ;</dt>
+                      <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"> {{resultados.uf}}</dd>
                     </div>
                     
                     <div class="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0" *ngIf="resultados.vendaObservacoes">

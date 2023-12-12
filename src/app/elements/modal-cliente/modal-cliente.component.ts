@@ -15,8 +15,9 @@ export class ModalClienteComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private consultaService: DataService,public dialogRef: MatDialogRef<ModalClienteComponent>) {}
 
   ngOnInit(): void {
-    this.consultaService.Consultacliente(this.data).subscribe((result) => {
+    this.consultaService.consultaCliente(this.data).subscribe((result) => {
       this.resultados = result
+      console.log(this.resultados)
     });
   }
 
@@ -29,5 +30,5 @@ export class ModalClienteComponent implements OnInit {
     window.print();
   }
   
-
+ 
 }
