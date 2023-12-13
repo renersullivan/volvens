@@ -19,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ButtonComponent } from './elements/button/button.component';
 import { ModalComponent } from './elements/modal/modal.component';
 import { ModalClienteComponent } from './elements/modal-cliente/modal-cliente.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ModalClienteComponent } from './elements/modal-cliente/modal-cliente.co
     VendasComponent,
     ButtonComponent,
     ModalComponent,
-    ModalClienteComponent
+    ModalClienteComponent,
+    PerfilComponent
   
   ],
   imports: [

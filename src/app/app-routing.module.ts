@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { VendasComponent } from './pages/vendas/vendas.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: '',component:HomeComponent},
   {path: '*',component:NotFoundComponent},
+  {path: 'perfil',component:PerfilComponent},
 
 ];
 
